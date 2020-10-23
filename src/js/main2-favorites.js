@@ -2,12 +2,18 @@
 
 function favoritesShows(ev) {
   const clicked = parseInt(ev.currentTarget.id);
-  const indexFav = favoritesList.indexOf(clicked);
+  const indexFav = favoritesList.findIndex(function (show, index) {
+    return show.id === clicked;
+  });
   const isFavorite = indexFav !== -1;
-  if (isFavorite === false) {
-    favoritesList.push(clicked);
-  } else {
+  if (isFavorite === true) {
     favoritesList.splice(indexFav, 1);
+  } else {
+    for (let i = 0; i < showList.length; i++) {
+      if (showList[i].show.id === clicked) {
+        favoritesList.push(showList[i].show);
+      }
+    }
   }
   paintShows();
   listenShows();

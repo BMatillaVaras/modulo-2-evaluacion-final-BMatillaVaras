@@ -4,13 +4,15 @@ function paintShows() {
   let html = "";
   for (let i = 0; i < showList.length; i++) {
     let classF = "";
-    const favoriteIndex = favoritesList.indexOf(i);
+    const favoriteIndex = favoritesList.findIndex(function (show, index) {
+      return show.id === showList[i].show.id;
+    });
     if (favoriteIndex !== -1) {
       classF = "show__item--favorite";
     } else {
       classF = "";
     }
-    html += `<li class="js-show-item ${classF}" id="${i}">`;
+    html += `<li class="js-show-item ${classF}" id="${showList[i].show.id}">`;
     html += `<h3>${showList[i].show.name}</h3>`;
     html += `<div class="container">`;
     if (showList[i].show.image === null) {
