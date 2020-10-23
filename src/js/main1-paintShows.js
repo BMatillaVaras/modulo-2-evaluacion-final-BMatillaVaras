@@ -1,0 +1,28 @@
+"use strict";
+
+function paintShows() {
+  let html = "";
+  for (let i = 0; i < showList.length; i++) {
+    let classF = "";
+    const favoriteIndex = favoritesList.indexOf(i);
+    if (favoriteIndex !== -1) {
+      classF = "show__item--favorite";
+    } else {
+      classF = "";
+    }
+    html += `<li class="js-show-item ${classF}" id="${i}">`;
+    html += `<h3>${showList[i].show.name}</h3>`;
+    html += `<div class="container">`;
+    if (showList[i].show.image === null) {
+      html += `<img src="https://via.placeholder.com/210x295/ffffff/666666/?
+      text=TV." alt="no existe imagen de la serie"`;
+    } else {
+      html += `<img src="${
+        showList[i].show.image.medium || showList[i].show.image.original
+      }" alt="imagen de la serie ${showList[i].show.name}"`;
+    }
+    html += `</div>`;
+    html += `</li>`;
+  }
+  list.innerHTML = html;
+}

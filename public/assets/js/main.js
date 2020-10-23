@@ -3,7 +3,8 @@
 const btn = document.querySelector(".js__btn");
 const input = document.querySelector(".js__input");
 const list = document.querySelector(".js-shows-list");
-let showList = "";
+let showList = [];
+let favoritesList = [];
 
 function getShowsData(ev) {
   ev.preventDefault();
@@ -20,13 +21,25 @@ function getShowsData(ev) {
         //console.log(showList);
       }
       paintShows();
+      listenShows();
     });
 }
+
+btn.addEventListener("click", getShowsData);
+
+"use strict";
 
 function paintShows() {
   let html = "";
   for (let i = 0; i < showList.length; i++) {
-    html += `<li>`;
+    let classF = "";
+    const favoriteIndex = favoritesList.indexOf(i);
+    if (favoriteIndex !== -1) {
+      classF = "show__item--favorite";
+    } else {
+      classF = "";
+    }
+    html += `<li class="js-show-item ${classF}" id="${i}">`;
     html += `<h3>${showList[i].show.name}</h3>`;
     html += `<div class="container">`;
     if (showList[i].show.image === null) {
@@ -43,8 +56,27 @@ function paintShows() {
   list.innerHTML = html;
 }
 
-btn.addEventListener("click", getShowsData);
-
 "use strict";
+
+function favoritesShows(ev) {
+  const clicked = parseInt(ev.currentTarget.id);
+  const indexFav = favoritesList.indexOf(clicked);
+  const isFavorite = indexFav !== -1;
+  if (isFavorite === false) {
+    favoritesList.push(clicked);
+  } else {
+    favoritesList.splice(indexFav, 1);
+  }
+  paintShows();
+  listenShows();
+  console.log(favoritesList);
+}
+
+function listenShows() {
+  const showsItems = document.querySelectorAll(".js-show-item");
+  for (const showItem of showsItems) {
+    showItem.addEventListener("click", favoritesShows);
+  }
+}
 
 //# sourceMappingURL=main.js.map
