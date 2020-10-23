@@ -2,9 +2,15 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .container {
   height: 295px;
   width: 210px;
+}
+
+.show__item--favorite {
+  font-family: sans-serif;
+  background-color: red;
 }
