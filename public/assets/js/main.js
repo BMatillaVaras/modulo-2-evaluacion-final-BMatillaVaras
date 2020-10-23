@@ -41,9 +41,9 @@ function paintShows() {
     } else {
       classF = "";
     }
-    html += `<li class="js-show-item ${classF}" id="${showList[i].show.id}">`;
-    html += `<h3>${showList[i].show.name}</h3>`;
-    html += `<div class="container">`;
+    html += `<li class="shows-list js-show-item ${classF}" id="${showList[i].show.id}">`;
+    html += `<h3 class="shows-list__title">${showList[i].show.name}</h3>`;
+    html += `<div class="shows-list__container">`;
     if (showList[i].show.image === null) {
       html += `<img src="https://via.placeholder.com/210x295/ffffff/666666/?
       text=TV." alt="no existe imagen de la serie"`;

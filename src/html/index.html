@@ -13,23 +13,25 @@
   </head>
 
   <body>
-    <header>
-      <h1>Buscador de series</h1>
+    <header class="header">
+      <h1 class="header__title">Buscador de series</h1>
     </header>
-    <main>
-      <section>
+    <main class="main">
+      <section class="main__section1">
         <form action="">
           <input
             type="text"
-            class="input js__input"
+            class="main__section1--input input js__input"
             placeholder="Busca una serie"
             value="friends"
           />
-          <button class="js__btn">Search</button>
+          <button class="main__section1--search js__btn">Search</button>
         </form>
+        <h2 class="main__section1--favorite">Mis series favoritas:</h2>
+        <ul class="main__section1--favorite-list"></ul>
       </section>
-      <section>
-        <ul class="shows_list js-shows-list"></ul>
+      <section class="main__section2">
+        <ul class="main__section2--list shows_list js-shows-list"></ul>
       </section>
     </main>
 
