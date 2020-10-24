@@ -66,14 +66,15 @@
 
 .favorite-list {
   display: flex;
-  justify-content: center;
+  align-items: center;
   margin: 10px;
   width: 220px;
   padding-bottom: 5px; }
-  .favorite-list__container {
+  .favorite-list__container--img {
     height: 147.5px;
     width: 105px; }
   .favorite-list__title {
-    font-size: 10px; }
+    font-size: 12px;
+    margin-left: 15px; }
 
 /*# sourceMappingURL=main.css.map */
