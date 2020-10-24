@@ -4,7 +4,7 @@ function paintShows() {
   let html = "";
   for (let i = 0; i < showList.length; i++) {
     let classF = "";
-    const favoriteIndex = favoritesList.findIndex(function (show, index) {
+    const favoriteIndex = favoritesList.findIndex(function (show) {
       return show.id === showList[i].show.id;
     });
     if (favoriteIndex !== -1) {

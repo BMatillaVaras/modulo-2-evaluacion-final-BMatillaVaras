@@ -2,7 +2,7 @@
 
 function favoritesShows(ev) {
   const clicked = parseInt(ev.currentTarget.id);
-  const indexFav = favoritesList.findIndex(function (show, index) {
+  const indexFav = favoritesList.findIndex(function (show) {
     return show.id === clicked;
   });
   const isFavorite = indexFav !== -1;
@@ -18,7 +18,7 @@ function favoritesShows(ev) {
   paintShows();
   listenShows();
   paintFavorites();
-  console.log(favoritesList);
+  setLocalStorage();
 }
 
 function listenShows() {
@@ -46,5 +46,6 @@ function paintFavorites() {
     html += `</div>`;
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
   }
+  html += `<li class="favorite-list"><button class="favorite-list__reset">Reset<button></li>`;
   listFavorite.innerHTML = html;
 }
