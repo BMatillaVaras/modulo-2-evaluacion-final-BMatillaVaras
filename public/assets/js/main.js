@@ -3,6 +3,7 @@
 const btn = document.querySelector(".js__btn");
 const input = document.querySelector(".js__input");
 const list = document.querySelector(".js-shows-list");
+const listFavorite = document.querySelector(".js-favorites-list");
 let showList = [];
 let favoritesList = [];
 
@@ -22,6 +23,7 @@ function getShowsData(ev) {
       }
       paintShows();
       listenShows();
+      paintFavorites();
     });
 }
 
@@ -46,11 +48,11 @@ function paintShows() {
     html += `<div class="shows-list__container">`;
     if (showList[i].show.image === null) {
       html += `<img src="https://via.placeholder.com/210x295/ffffff/666666/?
-      text=TV." alt="no existe imagen de la serie"`;
+      text=TV." alt="no existe imagen de la serie">`;
     } else {
       html += `<img src="${
         showList[i].show.image.medium || showList[i].show.image.original
-      }" alt="imagen de la serie ${showList[i].show.name}"`;
+      }" alt="imagen de la serie ${showList[i].show.name}">`;
     }
     html += `</div>`;
     html += `</li>`;
@@ -77,6 +79,7 @@ function favoritesShows(ev) {
   }
   paintShows();
   listenShows();
+  paintFavorites();
   console.log(favoritesList);
 }
 
@@ -85,6 +88,27 @@ function listenShows() {
   for (const showItem of showsItems) {
     showItem.addEventListener("click", favoritesShows);
   }
+}
+
+function paintFavorites() {
+  let html = "";
+  for (let i = 0; i < favoritesList.length; i++) {
+    html += `<li class="favorite-list" id="${i}">`;
+    html += `<div class="favorite-list__container">`;
+    if (favoritesList[i].image === null) {
+      html += `<img src="https://via.placeholder.com/210x295/ffffff/666666/?
+      text=TV." alt="no existe imagen de la serie" class="favorite-list__container--img">`;
+    } else {
+      html += `<img src="${
+        favoritesList[i].image.medium || favoritesList[i].image.original
+      }" alt="imagen de la serie ${
+        favoritesList[i].name
+      }" class="favorite-list__container--img">`;
+    }
+    html += `</div>`;
+    html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
+  }
+  listFavorite.innerHTML = html;
 }
 
 //# sourceMappingURL=main.js.map

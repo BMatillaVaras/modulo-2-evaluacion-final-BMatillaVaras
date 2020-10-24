@@ -3,6 +3,7 @@
 const btn = document.querySelector(".js__btn");
 const input = document.querySelector(".js__input");
 const list = document.querySelector(".js-shows-list");
+const listFavorite = document.querySelector(".js-favorites-list");
 let showList = [];
 let favoritesList = [];
 
@@ -22,6 +23,7 @@ function getShowsData(ev) {
       }
       paintShows();
       listenShows();
+      paintFavorites();
     });
 }
 

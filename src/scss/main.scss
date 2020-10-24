@@ -80,15 +80,18 @@
 
 .favorite-list {
   display: flex;
-  justify-content: center;
+  align-items: center;
   margin: 10px;
   width: 220px;
   padding-bottom: 5px;
   &__container {
-    height: 147.5px;
-    width: 105px;
+    &--img {
+      height: 147.5px;
+      width: 105px;
+    }
   }
   &__title {
-    font-size: 10px;
+    font-size: 12px;
+    margin-left: 15px;
   }
 }
