@@ -94,8 +94,13 @@
     font-size: 12px;
     margin-left: 15px;
   }
-  &__reset {
-    height: 25px;
-    width: 60px;
+  &__icon {
+    margin-left: 10px;
+    color: black;
+    font-size: 12px;
   }
+}
+.reset {
+  height: 25px;
+  width: 60px;
 }
