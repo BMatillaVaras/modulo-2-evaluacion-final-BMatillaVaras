@@ -104,6 +104,7 @@ function paintFavorites() {
     }
     html += `</div>`;
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
+    html += `<div><i class="fas fa-times-circle favorite-list__icon"></i></div>`;
   }
   listFavorite.innerHTML = html;
   listenFavorites();
