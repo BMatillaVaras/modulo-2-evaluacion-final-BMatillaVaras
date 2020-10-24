@@ -10,17 +10,10 @@ let favoritesList = [];
 function getShowsData(ev) {
   ev.preventDefault();
   const inputValue = input.value;
-  //console.log(inputValue);
   fetch(`//api.tvmaze.com/search/shows?q=${inputValue}`)
     .then((response) => response.json())
     .then((data) => {
-      //console.log(data);
-      if (data.length === 0) {
-        list.innerHTML = "No existe ninguna serie con ese nombre";
-      } else {
-        showList = data;
-        //console.log(showList);
-      }
+      showList = data;
       paintShows();
       listenShows();
       paintFavorites();
@@ -35,7 +28,7 @@ function paintShows() {
   let html = "";
   for (let i = 0; i < showList.length; i++) {
     let classF = "";
-    const favoriteIndex = favoritesList.findIndex(function (show, index) {
+    const favoriteIndex = favoritesList.findIndex(function (show) {
       return show.id === showList[i].show.id;
     });
     if (favoriteIndex !== -1) {
@@ -64,7 +57,7 @@ function paintShows() {
 
 function favoritesShows(ev) {
   const clicked = parseInt(ev.currentTarget.id);
-  const indexFav = favoritesList.findIndex(function (show, index) {
+  const indexFav = favoritesList.findIndex(function (show) {
     return show.id === clicked;
   });
   const isFavorite = indexFav !== -1;
@@ -80,7 +73,7 @@ function favoritesShows(ev) {
   paintShows();
   listenShows();
   paintFavorites();
-  console.log(favoritesList);
+  setLocalStorage();
 }
 
 function listenShows() {
@@ -108,7 +101,29 @@ function paintFavorites() {
     html += `</div>`;
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
   }
+  html += `<li class="favorite-list"><button class="favorite-list__reset">Reset<button></li>`;
   listFavorite.innerHTML = html;
 }
+
+"use strict";
+
+// guardamos en localStorage
+
+function setLocalStorage() {
+  const stringifyFavorites = JSON.stringify(favoritesList);
+  localStorage.setItem("favorites", stringifyFavorites);
+}
+
+// traemos del localStorage
+
+function getLocalStorage() {
+  const localStorageFavorites = localStorage.getItem("favorites");
+  if (localStorageFavorites !== null) {
+    favoritesList = JSON.parse(localStorageFavorites);
+  }
+  paintFavorites();
+}
+
+getLocalStorage();
 
 //# sourceMappingURL=main.js.map

@@ -81,7 +81,7 @@
 .favorite-list {
   display: flex;
   align-items: center;
-  margin: 10px;
+  margin-top: 10px;
   width: 220px;
   padding-bottom: 5px;
   &__container {
@@ -93,5 +93,9 @@
   &__title {
     font-size: 12px;
     margin-left: 15px;
+  }
+  &__reset {
+    height: 25px;
+    width: 60px;
   }
 }

@@ -67,7 +67,7 @@
 .favorite-list {
   display: flex;
   align-items: center;
-  margin: 10px;
+  margin-top: 10px;
   width: 220px;
   padding-bottom: 5px; }
   .favorite-list__container--img {
@@ -76,5 +76,8 @@
   .favorite-list__title {
     font-size: 12px;
     margin-left: 15px; }
+  .favorite-list__reset {
+    height: 25px;
+    width: 60px; }
 
 /*# sourceMappingURL=main.css.map */
