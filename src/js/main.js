@@ -18,6 +18,7 @@ function getShowsData(ev) {
       paintShows();
       listenShows();
       paintFavorites();
+      listenFavorites();
     });
 }
 
