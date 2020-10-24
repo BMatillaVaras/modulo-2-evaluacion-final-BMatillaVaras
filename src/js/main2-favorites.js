@@ -46,6 +46,5 @@ function paintFavorites() {
     html += `</div>`;
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
   }
-  html += `<li class="favorite-list"><button class="favorite-list__reset">Reset<button></li>`;
   listFavorite.innerHTML = html;
 }

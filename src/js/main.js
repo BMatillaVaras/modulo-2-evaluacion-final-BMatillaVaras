@@ -4,6 +4,7 @@ const btn = document.querySelector(".js__btn");
 const input = document.querySelector(".js__input");
 const list = document.querySelector(".js-shows-list");
 const listFavorite = document.querySelector(".js-favorites-list");
+let resetBtn = document.querySelector(".js-reset-btn");
 let showList = [];
 let favoritesList = [];
 

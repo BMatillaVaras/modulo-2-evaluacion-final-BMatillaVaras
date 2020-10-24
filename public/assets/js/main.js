@@ -4,6 +4,7 @@ const btn = document.querySelector(".js__btn");
 const input = document.querySelector(".js__input");
 const list = document.querySelector(".js-shows-list");
 const listFavorite = document.querySelector(".js-favorites-list");
+let resetBtn = document.querySelector(".js-reset-btn");
 let showList = [];
 let favoritesList = [];
 
@@ -101,7 +102,6 @@ function paintFavorites() {
     html += `</div>`;
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
   }
-  html += `<li class="favorite-list"><button class="favorite-list__reset">Reset<button></li>`;
   listFavorite.innerHTML = html;
 }
 
@@ -125,5 +125,19 @@ function getLocalStorage() {
 }
 
 getLocalStorage();
+
+"use strict";
+
+function reset() {
+  favoritesList = [];
+  paintFavorites();
+  paintShows();
+  listenShows();
+  setLocalStorage();
+
+  console.log(favoritesList);
+}
+
+resetBtn.addEventListener("click", reset);
 
 //# sourceMappingURL=main.js.map
