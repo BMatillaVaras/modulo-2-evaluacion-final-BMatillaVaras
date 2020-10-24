@@ -27,4 +27,5 @@ function paintShows() {
     html += `</li>`;
   }
   list.innerHTML = html;
+  listenFavorites();
 }

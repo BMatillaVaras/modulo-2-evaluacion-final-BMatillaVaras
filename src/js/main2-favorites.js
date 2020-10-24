@@ -19,6 +19,7 @@ function favoritesShows(ev) {
   listenShows();
   paintFavorites();
   setLocalStorage();
+  listenFavorites();
 }
 
 function listenShows() {
@@ -47,4 +48,5 @@ function paintFavorites() {
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
   }
   listFavorite.innerHTML = html;
+  listenFavorites();
 }
