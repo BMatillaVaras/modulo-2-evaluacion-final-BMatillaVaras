@@ -8,7 +8,7 @@
   background-image: url("../images/cine-vacio-sillas.jpg");
   background-position: center;
   background-size: cover;
-  height: 170px;
+  height: 23vh;
   display: flex;
   align-items: center; }
   .header__title {
@@ -19,17 +19,29 @@
     opacity: 0.85; }
 
 .main {
+  background-color: #bb8383;
   display: flex;
   font-family: sans-serif;
-  margin: 30px 0 0 30px; }
+  padding: 30px 0 0 30px; }
   .main__section1 {
     width: 25vw; }
     .main__section1--input {
-      height: 25px;
-      padding-left: 5px; }
+      background-color: #bb9696;
+      height: 30px;
+      font-size: 15px;
+      padding-left: 5px;
+      border-style: none;
+      border-bottom: 2px solid #8a3838; }
     .main__section1--search {
-      height: 25px;
-      width: 70px; }
+      height: 30px;
+      width: 70px;
+      font-size: 15px;
+      border-style: none;
+      margin-left: 5px; }
+      .main__section1--search:hover {
+        background-color: #8a3838;
+        color: white;
+        text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5); }
     .main__section1--favorite {
       margin-top: 20px;
       font-size: 24px; }
@@ -48,7 +60,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+  margin: 0 10px 20px 10px;
   width: 220px;
   padding-bottom: 5px; }
   .shows-list__title {
@@ -62,7 +74,7 @@
 
 .show__item--favorite {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  background-color: coral; }
+  background-color: #8a3838; }
 
 .favorite-list {
   display: flex;
@@ -78,11 +90,18 @@
     margin-left: 15px; }
   .favorite-list__icon {
     margin-left: 10px;
-    color: black;
-    font-size: 12px; }
+    color: #8a3838;
+    font-size: 14px; }
 
 .reset {
-  height: 25px;
-  width: 60px; }
+  height: 30px;
+  width: 70px;
+  font-size: 15px;
+  border-style: none; }
+  .reset:hover {
+    background-color: #8a3838;
+    border-style: none;
+    color: white;
+    text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.5); }
 
 /*# sourceMappingURL=main.css.map */
