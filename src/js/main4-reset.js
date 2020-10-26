@@ -16,7 +16,6 @@ resetBtn.addEventListener("click", reset);
 // function to delete one favorite serie
 
 function resetFavorite(ev) {
-  console.log(favoritesList);
   const clicked = parseInt(ev.currentTarget.id);
   const indexFav = favoritesList.findIndex(function (favorite) {
     return favorite.id === clicked;
@@ -25,7 +24,6 @@ function resetFavorite(ev) {
   if (isFavorite === true) {
     favoritesList.splice(indexFav, 1);
   }
-  console.log(favoritesList);
   paintFavorites();
   listenFavorites();
   paintShows();
