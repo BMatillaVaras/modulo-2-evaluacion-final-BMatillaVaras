@@ -134,13 +134,12 @@ getLocalStorage();
 "use strict";
 
 function reset() {
-  localStorage.removeItem("favorites"); //por qué no lo borra?
   favoritesList = [];
+  localStorage.removeItem("favorites");
   paintFavorites();
   paintShows();
   listenShows();
   listenFavorites();
-  setLocalStorage();
 }
 
 resetBtn.addEventListener("click", reset);
