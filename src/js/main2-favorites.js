@@ -32,7 +32,7 @@ function listenShows() {
 function paintFavorites() {
   let html = "";
   for (let i = 0; i < favoritesList.length; i++) {
-    html += `<li class="favorite-list js-favorite-item" id="${favoritesList[i].id}">`;
+    html += `<li class="favorite-list">`;
     html += `<div class="favorite-list__container">`;
     if (favoritesList[i].image === null) {
       html += `<img src="https://via.placeholder.com/210x295/ffffff/666666/?
@@ -46,7 +46,7 @@ function paintFavorites() {
     }
     html += `</div>`;
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
-    html += `<i class="fas fa-times-circle favorite-list__icon"></i>`;
+    html += `<i class="fas fa-times-circle favorite-list__icon js-favorite-item" id="${favoritesList[i].id}"></i>`;
   }
   listFavorite.innerHTML = html;
   listenFavorites();
