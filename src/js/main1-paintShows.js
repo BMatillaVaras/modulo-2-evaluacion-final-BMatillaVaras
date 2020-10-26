@@ -1,5 +1,7 @@
 "use strict";
 
+//function to paint server data
+
 function paintShows() {
   let html = "";
   for (let i = 0; i < showList.length; i++) {

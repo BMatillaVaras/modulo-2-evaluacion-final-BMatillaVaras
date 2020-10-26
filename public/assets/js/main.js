@@ -8,6 +8,8 @@ let resetBtn = document.querySelector(".js-reset-btn");
 let showList = [];
 let favoritesList = [];
 
+// function to get data from the server
+
 function getShowsData(ev) {
   ev.preventDefault();
   const inputValue = input.value;
@@ -25,6 +27,8 @@ function getShowsData(ev) {
 btn.addEventListener("click", getShowsData);
 
 "use strict";
+
+//function to paint server data
 
 function paintShows() {
   let html = "";
@@ -58,6 +62,8 @@ function paintShows() {
 
 "use strict";
 
+// function to pick up favorite series
+
 function favoritesShows(ev) {
   const clicked = parseInt(ev.currentTarget.id);
   const indexFav = favoritesList.findIndex(function (show) {
@@ -87,6 +93,8 @@ function listenShows() {
   }
 }
 
+//function to paint favorite series
+
 function paintFavorites() {
   let html = "";
   for (let i = 0; i < favoritesList.length; i++) {
@@ -112,14 +120,14 @@ function paintFavorites() {
 
 "use strict";
 
-// guardamos en localStorage
+// function save to localStorage
 
 function setLocalStorage() {
   const stringifyFavorites = JSON.stringify(favoritesList);
   localStorage.setItem("favorites", stringifyFavorites);
 }
 
-// traemos del localStorage
+// function to get from localStorage
 
 function getLocalStorage() {
   const localStorageFavorites = localStorage.getItem("favorites");
@@ -133,6 +141,8 @@ getLocalStorage();
 
 "use strict";
 
+// function to delete all favorite series
+
 function reset() {
   favoritesList = [];
   localStorage.removeItem("favorites");
@@ -143,6 +153,8 @@ function reset() {
 }
 
 resetBtn.addEventListener("click", reset);
+
+// function to delete one favorite serie
 
 function resetFavorite(ev) {
   console.log(favoritesList);

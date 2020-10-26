@@ -8,6 +8,8 @@ let resetBtn = document.querySelector(".js-reset-btn");
 let showList = [];
 let favoritesList = [];
 
+// function to get data from the server
+
 function getShowsData(ev) {
   ev.preventDefault();
   const inputValue = input.value;

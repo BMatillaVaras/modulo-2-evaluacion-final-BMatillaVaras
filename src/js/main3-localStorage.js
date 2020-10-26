@@ -1,13 +1,13 @@
 "use strict";
 
-// guardamos en localStorage
+// function save to localStorage
 
 function setLocalStorage() {
   const stringifyFavorites = JSON.stringify(favoritesList);
   localStorage.setItem("favorites", stringifyFavorites);
 }
 
-// traemos del localStorage
+// function to get from localStorage
 
 function getLocalStorage() {
   const localStorageFavorites = localStorage.getItem("favorites");

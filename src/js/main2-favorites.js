@@ -1,5 +1,7 @@
 "use strict";
 
+// function to pick up favorite series
+
 function favoritesShows(ev) {
   const clicked = parseInt(ev.currentTarget.id);
   const indexFav = favoritesList.findIndex(function (show) {
@@ -28,6 +30,8 @@ function listenShows() {
     showItem.addEventListener("click", favoritesShows);
   }
 }
+
+//function to paint favorite series
 
 function paintFavorites() {
   let html = "";

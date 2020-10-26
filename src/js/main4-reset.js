@@ -1,5 +1,7 @@
 "use strict";
 
+// function to delete all favorite series
+
 function reset() {
   favoritesList = [];
   localStorage.removeItem("favorites");
@@ -10,6 +12,8 @@ function reset() {
 }
 
 resetBtn.addEventListener("click", reset);
+
+// function to delete one favorite serie
 
 function resetFavorite(ev) {
   console.log(favoritesList);
