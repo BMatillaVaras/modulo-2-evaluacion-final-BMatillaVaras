@@ -23,7 +23,9 @@ function paintShows() {
     } else {
       html += `<img src="${
         showList[i].show.image.medium || showList[i].show.image.original
-      }" alt="imagen de la serie ${showList[i].show.name}">`;
+      }" alt="imagen de la serie ${showList[i].show.name}" title="cartel de ${
+        showList[i].show.name
+      }">`;
     }
     html += `</div>`;
     html += `</li>`;

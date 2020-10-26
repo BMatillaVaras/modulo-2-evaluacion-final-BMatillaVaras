@@ -46,7 +46,9 @@ function paintFavorites() {
         favoritesList[i].image.medium || favoritesList[i].image.original
       }" alt="imagen de la serie ${
         favoritesList[i].name
-      }" class="favorite-list__container--img">`;
+      }" class="favorite-list__container--img" title="cartel de ${
+        favoritesList[i].name
+      }">`;
     }
     html += `</div>`;
     html += `<h4 = class="favorite-list__title">${favoritesList[i].name}</h4>`;
