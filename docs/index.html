@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Adalab Web Starter Kit</title>
+    <script
+      src="https://kit.fontawesome.com/9a5198306a.js"
+      crossorigin="anonymous"
+    ></script>
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
@@ -22,19 +26,18 @@
           <input
             type="text"
             class="main__section1--input input js__input"
-            placeholder="Busca una serie"
-            value="friends"
+            placeholder="Ej: Dexter"
           />
           <button class="main__section1--search js__btn">Search</button>
         </form>
         <h2 class="main__section1--favorite">Mis series favoritas:</h2>
-        <ul class="main__section1--favorite-list"></ul>
+        <ul class="main__section1--favorite-list js-favorites-list"></ul>
+        <button class="reset js-reset-btn">Reset</button>
       </section>
       <section class="main__section2">
         <ul class="main__section2--list shows_list js-shows-list"></ul>
       </section>
     </main>
-
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
