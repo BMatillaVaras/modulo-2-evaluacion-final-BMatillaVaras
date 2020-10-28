@@ -5,6 +5,7 @@ const input = document.querySelector(".js__input");
 const list = document.querySelector(".js-shows-list");
 const listFavorite = document.querySelector(".js-favorites-list");
 let resetBtn = document.querySelector(".js-reset-btn");
+const logBtn = document.querySelector(".js-log-btn");
 let showList = [];
 let favoritesList = [];
 
@@ -25,3 +26,9 @@ function getShowsData(ev) {
 }
 
 btn.addEventListener("click", getShowsData);
+
+function numberFavorites() {
+  console.log(`Tienes ${favoritesList.length} favoritos`);
+}
+
+logBtn.addEventListener("click", numberFavorites);
